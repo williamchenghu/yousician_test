@@ -19,11 +19,37 @@ export class SongsListContainer extends Component {
       })
     })
   }
+  //change the rating
+  onChangeRating = (songItem, newRating) => {
+    let { songsList } = this.state
+    let newList = songsList.reduce((list, item) => {
+      // find the correct song
+      if (
+        item.artist === songItem.artist &&
+        item.title === songItem.title &&
+        item.released === songItem.released
+      ) {
+        item.rating = newRating
+      }
+      list.push(item)
+      return list
+    }, [])
+
+    this.setState({
+      songsList: newList,
+    })
+  }
 
   render() {
     let { songsList } = this.state
     return songsList.map((song, index) => {
-      return <SingleSongCardCmp key={index} songDetails={song} />
+      return (
+        <SingleSongCardCmp
+          key={index}
+          songDetails={song}
+          onChangeRating={this.onChangeRating}
+        />
+      )
     })
   }
 }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+
+import { SingleSongCardCmp } from '../components/cards/SingleSongCardCmp'
 import axios from 'axios'
 
 export class SongsListContainer extends Component {
@@ -19,7 +21,10 @@ export class SongsListContainer extends Component {
   }
 
   render() {
-    return null
+    let { songsList } = this.state
+    return songsList.map((song, index) => {
+      return <SingleSongCardCmp key={index} songDetails={song} />
+    })
   }
 }
 export default SongsListContainer

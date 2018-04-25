@@ -2,4 +2,22 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-}
+  background: #0e0f13;
+  color: #dbeaff; }
+
+.logo {
+  background: #4fc514;
+  width: 4em;
+  padding: 1em;
+  border-radius: 1em; }
+
+.card {
+  display: inline; }
+  .card .logo-part {
+    display: inline-block; }
+  .card .level-part {
+    display: inline-block; }
+  .card .detail-part {
+    display: inline-block; }
+  .card .settings {
+    float: right; }

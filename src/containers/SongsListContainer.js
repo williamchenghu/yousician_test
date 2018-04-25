@@ -10,6 +10,7 @@ export class SongsListContainer extends Component {
   }
 
   componentDidMount = () => {
+    //get the song list here
     axios.get('/songs').then(res => {
       this.setState({
         songsList: res.data,

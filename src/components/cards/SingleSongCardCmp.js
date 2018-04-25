@@ -3,18 +3,9 @@ import PropTypes from 'prop-types'
 import FontIcon from 'material-ui/FontIcon'
 import logo from '../../images/fingerprint-white.png'
 import Rating from 'react-rating'
+import { LevelCharCmp } from '../widgets/LevelChartCmp'
 
 export class SingleSongCardCmp extends Component {
-  static propTypes = {
-    onChangeRating: PropTypes.func.isRequired,
-    songDetails: PropTypes.shape({
-      artist: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      level: PropTypes.number.isRequired,
-      rating: PropTypes.number.isRequired,
-    }).isRequired,
-  }
-
   constructor(props) {
     super(props)
   }
@@ -36,8 +27,19 @@ export class SingleSongCardCmp extends Component {
             onChange={rate => onChangeRating(this.props.songDetails, rate)}
             fractions={2}
           />
+          <LevelCharCmp level={songDetails.level} />
         </div>
       </div>
     )
   }
+}
+
+SingleSongCardCmp.propTypes = {
+  onChangeRating: PropTypes.func.isRequired,
+  songDetails: PropTypes.shape({
+    artist: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    level: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+  }).isRequired,
 }

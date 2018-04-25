@@ -9,6 +9,7 @@
     "npm-run-all": "^4.1.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-minimal-pie-chart": "^3.0.1",
     "react-rating": "^1.1.2",
     "react-scripts": "1.1.4"
   },

@@ -12,7 +12,7 @@ body {
   border-radius: 1em; }
 
 .card {
-  display: inline; }
+  display: block; }
   .card .logo-part {
     display: inline-block; }
   .card .level-part {
@@ -21,3 +21,11 @@ body {
     display: inline-block; }
   .card .settings {
     float: right; }
+
+.donut-level .donut {
+  max-width: 3em; }
+
+.donut-level .number {
+  position: relative;
+  top: -2em;
+  right: -0.8em; }

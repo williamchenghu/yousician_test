@@ -18,7 +18,7 @@ body {
   border-radius: 1em;
 }
 .card {
-  display: inline;
+  display: block;
   .logo-part {
     display: inline-block;
   }
@@ -30,5 +30,16 @@ body {
   }
   .settings {
     float: right;
+  }
+}
+
+.donut-level {
+  .donut {
+    max-width: 3em;
+  }
+  .number {
+    position: relative;
+    top: -2em;
+    right: -0.8em;
   }
 }

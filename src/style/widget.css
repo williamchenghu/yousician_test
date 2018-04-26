@@ -11,3 +11,10 @@
 
 .empty {
   text-align: center; }
+
+.pagination {
+  display: block; }
+  .pagination .grid {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em; }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Divider from 'material-ui/Divider'
 import PropTypes from 'prop-types'
 import { SingleSongCardCmp } from '../components/cards/SingleSongCardCmp'
+import PaginationCmp from '../components/widgets/PaginationCmp'
 import axios from 'axios'
 
 export class SongsListContainer extends Component {
@@ -10,6 +11,7 @@ export class SongsListContainer extends Component {
     this.state = {
       songsList: [],
       renderSongList: [],
+      currentPageNumber: 1,
     }
   }
 
@@ -20,6 +22,11 @@ export class SongsListContainer extends Component {
         songsList: res.data,
         renderSongList: res.data,
       })
+    })
+  }
+  onChangeCurrentPange = pageNumber => {
+    this.setState({
+      currentPageNumber: pageNumber,
     })
   }
   //change the rating
@@ -79,7 +86,7 @@ export class SongsListContainer extends Component {
   }
 
   render() {
-    let { renderSongList } = this.state
+    let { renderSongList, currentPageNumber } = this.state
     if (renderSongList.length < 1) {
       return (
         <div className="empty">
@@ -87,17 +94,31 @@ export class SongsListContainer extends Component {
         </div>
       )
     }
-    return renderSongList.map((song, index) => {
-      return (
-        <div key={index}>
-          <SingleSongCardCmp
-            songDetails={song}
-            onChangeRating={this.onChangeRating}
-          />
-          <Divider />
-        </div>
-      )
-    })
+    return (
+      <div>
+        {renderSongList.map((song, index) => {
+          if (
+            (currentPageNumber - 1) * 5 <= index &&
+            index < currentPageNumber * 5
+          ) {
+            return (
+              <div key={index}>
+                <SingleSongCardCmp
+                  songDetails={song}
+                  onChangeRating={this.onChangeRating}
+                />
+                <Divider />
+              </div>
+            )
+          }
+        })}
+        <PaginationCmp
+          currentPageNum={currentPageNumber}
+          listLength={renderSongList.length}
+          onChangeCurrentPange={this.onChangeCurrentPange}
+        />
+      </div>
+    )
   }
 }
 

@@ -25,9 +25,7 @@ export class App extends Component {
           onChange={msg => {
             this.setState({ searchMsg: msg || '' })
           }}
-          onRequestSearch={() => {
-            this.setState({ searchMsg: this.state.msg })
-          }}
+          onRequestSearch={() => {}}
         />
         <div className="silder">
           <span>Yousician Level: 1 to {filterLevel}</span>

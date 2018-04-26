@@ -20,8 +20,6 @@ body {
     display: inline-block;
     vertical-align: middle;
     margin-right: 1em; }
-  .card .settings {
-    float: right; }
 
 .padding-space {
   padding: 1em 2em; }

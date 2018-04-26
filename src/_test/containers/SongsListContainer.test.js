@@ -58,18 +58,5 @@ describe('Container: SongListContainer', () => {
       //check
       expect(wrapper.state().currentPageNumber).toEqual(5)
     })
-
-    it('should return true if the search messsage is includes in target value', () => {
-      //prepare
-      let instance = wrapper.instance()
-
-      //run
-      let res = instance.songMatchingChecker(
-        { title: 'test', artist: 'tester' },
-        'er'
-      )
-      //check
-      expect(res).toEqual(true)
-    })
   })
 })

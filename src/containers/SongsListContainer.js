@@ -63,13 +63,6 @@ export class SongsListContainer extends Component {
       songsList: newList,
     })
   }
-  //check if the song title or artist matching the search msg
-  songMatchingChecker = (target, searchMsg) => {
-    return (
-      target.title.toUpperCase().includes(searchMsg.toUpperCase()) ||
-      target.artist.toUpperCase().includes(searchMsg.toUpperCase())
-    )
-  }
 
   // prepare the new list to render
   onPreparingSongList = nextProps => {
@@ -77,7 +70,7 @@ export class SongsListContainer extends Component {
     let { filterLevel, searchMsg } = nextProps
     let list = songsList.reduce((newList, song) => {
       if (
-        this.songMatchingChecker(song, searchMsg) &&
+        song.title.toUpperCase().includes(searchMsg.toUpperCase()) &&
         song.level <= filterLevel
       ) {
         newList.push(song)

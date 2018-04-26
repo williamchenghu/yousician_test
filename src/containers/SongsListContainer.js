@@ -45,7 +45,7 @@ export class SongsListContainer extends Component {
     let { songsList } = this.state
     let { filterLevel } = this.props
     return songsList.map((song, index) => {
-      if (song.level >= filterLevel) {
+      if (song.level > filterLevel) {
         return null
       }
       return (
@@ -64,7 +64,7 @@ export class SongsListContainer extends Component {
     let { songsList } = this.state
     let { searchMsg, filterLevel } = this.props
     return songsList.map((song, index) => {
-      if (song.level >= filterLevel) {
+      if (song.level > filterLevel) {
         return null
       }
       // convert artist and song name to upper case to check

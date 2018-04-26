@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 //search bar
 import SearchBar from 'material-ui-search-bar'
 import Slider from 'material-ui/Slider'
+import Divider from 'material-ui/Divider'
 
 export class App extends Component {
   constructor(props) {
@@ -27,15 +28,22 @@ export class App extends Component {
             this.setState({ mode: 'search' })
           }}
         />
-        <Slider
-          min={1}
-          max={15}
-          step={1}
-          value={filterLevel}
-          onChange={(e, value) => {
-            this.setState({ filterLevel: value })
-          }}
-        />
+        <div className="silder">
+          <span>Yousician Level: 1 to {filterLevel}</span>
+          <Slider
+            min={1}
+            max={15}
+            step={1}
+            sliderStyle={{
+              margin: '1em 0em',
+            }}
+            value={filterLevel}
+            onChange={(e, value) => {
+              this.setState({ filterLevel: value })
+            }}
+          />
+        </div>
+
         <SongsListContainer
           mode={mode}
           searchMsg={searchMsg}

@@ -1,0 +1,6 @@
+@media screen and (max-width: 800px) {
+  body {
+    margin: 0.5em;
+    /* The width is 100%, when the viewport is 800px or smaller */ }
+  .silder {
+    margin: 1em 1em; } }

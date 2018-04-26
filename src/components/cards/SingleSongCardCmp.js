@@ -13,21 +13,28 @@ export class SingleSongCardCmp extends Component {
   render() {
     let { songDetails, onChangeRating } = this.props
     return (
-      <div className="card">
-        <div className="logo-part">
+      <div className="card padding-space">
+        <div className="grid">
           <img src={logo} alt="Logo" className="logo" />
         </div>
-        <div className="detail-part">
-          <FontIcon className="muidocs-icon-action-home" />
-          {songDetails.title}
-          <Rating
-            initialRating={songDetails.rating}
-            emptySymbol={<i className="material-icons">star_border</i>}
-            fullSymbol={<i className="material-icons">star</i>}
-            onChange={rate => onChangeRating(this.props.songDetails, rate)}
-            fractions={2}
-          />
+        <div className="grid">
           <LevelCharCmp level={songDetails.level} />
+        </div>
+        <div className="grid">
+          <div>{songDetails.title}</div>
+          <div className="card">
+            <div className="grid">
+              <Rating
+                initialRating={songDetails.rating}
+                emptySymbol={<i className="material-icons">star_border</i>}
+                fullSymbol={<i className="material-icons">star</i>}
+                onChange={rate => onChangeRating(this.props.songDetails, rate)}
+                fractions={2}
+              />
+            </div>
+
+            <div className="grid">{songDetails.artist}</div>
+          </div>
         </div>
       </div>
     )

@@ -1,44 +1,36 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import FontIcon from 'material-ui/FontIcon'
 import logo from '../../images/fingerprint-white.png'
 import Rating from 'react-rating'
 import { LevelCharCmp } from '../widgets/LevelChartCmp'
 
-export class SingleSongCardCmp extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    let { songDetails, onChangeRating } = this.props
-    return (
-      <div className="card padding-space">
-        <div className="grid logo-border">
-          <img src={logo} alt="Logo" className="logo" />
-        </div>
-        <div className="grid">
-          <LevelCharCmp level={songDetails.level} />
-        </div>
-        <div className="grid">
-          <div>{songDetails.title}</div>
-          <div className="card">
-            <div className="grid">
-              <Rating
-                initialRating={songDetails.rating}
-                emptySymbol={<i className="material-icons">star_border</i>}
-                fullSymbol={<i className="material-icons">star</i>}
-                onChange={rate => onChangeRating(this.props.songDetails, rate)}
-                fractions={2}
-              />
-            </div>
-
-            <div className="grid">{songDetails.artist}</div>
+export const SingleSongCardCmp = ({ songDetails, onChangeRating }) => {
+  return (
+    <div className="card padding-space">
+      <div className="grid logo-border">
+        <img src={logo} alt="Logo" className="logo" />
+      </div>
+      <div className="grid">
+        <LevelCharCmp level={songDetails.level} />
+      </div>
+      <div className="grid">
+        <div>{songDetails.title}</div>
+        <div className="card">
+          <div className="grid">
+            <Rating
+              initialRating={songDetails.rating}
+              emptySymbol={<i className="material-icons">star_border</i>}
+              fullSymbol={<i className="material-icons">star</i>}
+              onChange={rate => onChangeRating(songDetails, rate)}
+              fractions={2}
+            />
           </div>
+
+          <div className="grid">{songDetails.artist}</div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 SingleSongCardCmp.propTypes = {

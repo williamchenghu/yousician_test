@@ -111,6 +111,7 @@ export class SongsListContainer extends Component {
               </div>
             )
           }
+          return null
         })}
         <PaginationCmp
           currentPageNum={currentPageNumber}

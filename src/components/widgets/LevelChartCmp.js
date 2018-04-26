@@ -1,6 +1,7 @@
 import React from 'react'
 
 import PieChart from 'react-minimal-pie-chart'
+import PropTypes from 'prop-types'
 
 export const LevelCharCmp = ({ level }) => {
   return (
@@ -19,4 +20,7 @@ export const LevelCharCmp = ({ level }) => {
       <div className="number">{level}</div>
     </div>
   )
+}
+LevelCharCmp.propTypes = {
+  level: PropTypes.number.isRequired,
 }

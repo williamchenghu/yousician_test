@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import SongsListContainer from './containers/SongsListContainer'
-//import router
-import { BrowserRouter, Route } from 'react-router-dom'
 //search bar
 import SearchBar from 'material-ui-search-bar'
 import Slider from 'material-ui/Slider'
-import Divider from 'material-ui/Divider'
 
 export class App extends Component {
   constructor(props) {
@@ -18,7 +15,7 @@ export class App extends Component {
   }
 
   render() {
-    let { mode, searchMsg, filterLevel } = this.state
+    let { searchMsg, filterLevel } = this.state
     return (
       <div>
         <SearchBar

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import logo from '../../images/fingerprint-white.png'
+import logo from '../images/fingerprint-white.png'
 import Rating from 'react-rating'
-import { LevelCharCmp } from '../widgets/LevelChartCmp'
+import LevelChartCmp from './widgets/LevelChartCmp'
 
 export const SingleSongCardCmp = ({ songDetails, onChangeRating }) => {
   return (
@@ -11,13 +11,14 @@ export const SingleSongCardCmp = ({ songDetails, onChangeRating }) => {
         <img src={logo} alt="Logo" className="logo" />
       </div>
       <div className="grid">
-        <LevelCharCmp level={songDetails.level} />
+        <LevelChartCmp level={songDetails.level} />
       </div>
       <div className="grid">
         <div>{songDetails.title}</div>
         <div className="card">
           <div className="grid">
             <Rating
+              id="rating"
               initialRating={songDetails.rating}
               emptySymbol={<i className="material-icons">star_border</i>}
               fullSymbol={<i className="material-icons">star</i>}
@@ -42,3 +43,5 @@ SingleSongCardCmp.propTypes = {
     rating: PropTypes.number.isRequired,
   }).isRequired,
 }
+
+export default SingleSongCardCmp

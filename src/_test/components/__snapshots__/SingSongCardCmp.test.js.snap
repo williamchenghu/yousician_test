@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container: SingSongCardCmp activate: SingSongCardCmp should render correctly 1`] = `
+<div
+  className="card padding-space"
+>
+  <div
+    className="grid logo-border"
+  >
+    <img
+      alt="Logo"
+      className="logo"
+      src="fingerprint-white.png"
+    />
+  </div>
+  <div
+    className="grid"
+  >
+    <LevelChartCmp
+      level={13}
+    />
+  </div>
+  <div
+    className="grid"
+  >
+    <div>
+      Lycanthropic Metamorphosis
+    </div>
+    <div
+      className="card"
+    >
+      <div
+        className="grid"
+      >
+        <RatingAPILayer
+          direction="ltr"
+          emptySymbol={
+            <i
+              className="material-icons"
+            >
+              star_border
+            </i>
+          }
+          fractions={2}
+          fullSymbol={
+            <i
+              className="material-icons"
+            >
+              star
+            </i>
+          }
+          id="rating"
+          initialRating={5}
+          onChange={[Function]}
+          onHover={[Function]}
+          placeholderSymbol={
+            Object {
+              "backgroundColor": "red",
+              "border": "5px double white",
+              "borderRadius": "50%",
+              "display": "inline-block",
+              "height": 30,
+              "width": 30,
+            }
+          }
+          quiet={false}
+          readonly={false}
+          start={0}
+          step={1}
+          stop={5}
+        />
+      </div>
+      <div
+        className="grid"
+      >
+        The Yousicians
+      </div>
+    </div>
+  </div>
+</div>
+`;

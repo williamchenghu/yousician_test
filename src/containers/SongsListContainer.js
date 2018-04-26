@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Divider from 'material-ui/Divider'
 import PropTypes from 'prop-types'
-import { SingleSongCardCmp } from '../components/cards/SingleSongCardCmp'
+import SingleSongCardCmp from '../components/SingleSongCardCmp'
 import PaginationCmp from '../components/widgets/PaginationCmp'
 import axios from 'axios'
 

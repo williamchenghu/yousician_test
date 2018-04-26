@@ -24,7 +24,7 @@ describe('Container: SongListContainer', () => {
     })
   })
 
-  describe('actions: App', () => {
+  describe('actions: SongListContainer', () => {
     let wrapper
 
     beforeEach(async () => {

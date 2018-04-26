@@ -3,7 +3,7 @@ import React from 'react'
 import PieChart from 'react-minimal-pie-chart'
 import PropTypes from 'prop-types'
 
-export const LevelCharCmp = ({ level }) => {
+const LevelChartCmp = ({ level }) => {
   return (
     <div className="donut-level">
       <PieChart
@@ -21,6 +21,8 @@ export const LevelCharCmp = ({ level }) => {
     </div>
   )
 }
-LevelCharCmp.propTypes = {
+LevelChartCmp.propTypes = {
   level: PropTypes.number.isRequired,
 }
+
+export default LevelChartCmp

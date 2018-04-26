@@ -19,6 +19,7 @@ export class App extends Component {
     return (
       <div>
         <SearchBar
+          id="searchBar"
           onChange={msg => {
             this.setState({ searchMsg: msg || '' })
           }}
@@ -27,6 +28,7 @@ export class App extends Component {
         <div className="silder">
           <span>Yousician Level: 1 to {filterLevel}</span>
           <Slider
+            id="silder"
             min={1}
             max={15}
             step={1}

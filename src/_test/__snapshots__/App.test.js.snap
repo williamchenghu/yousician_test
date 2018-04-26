@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App activate: App should render correctly 1`] = `
+<div>
+  <SearchBar
+    closeIcon={
+      <NavigationClose
+        color="#9e9e9e"
+      />
+    }
+    dataSource={Array []}
+    dataSourceConfig={
+      Object {
+        "text": "text",
+        "value": "value",
+      }
+    }
+    disabled={false}
+    hintText="Search"
+    id="searchBar"
+    onChange={[Function]}
+    onRequestSearch={[Function]}
+    searchIcon={
+      <ActionSearch
+        color="#9e9e9e"
+      />
+    }
+    spellCheck={false}
+    value=""
+  />
+  <div
+    className="silder"
+  >
+    <span>
+      Yousician Level: 1 to 
+      15
+    </span>
+    <Slider
+      axis="x"
+      disableFocusRipple={false}
+      disabled={false}
+      id="silder"
+      max={15}
+      min={1}
+      onChange={[Function]}
+      required={true}
+      sliderStyle={
+        Object {
+          "margin": "1em 0em",
+        }
+      }
+      step={1}
+      style={Object {}}
+      value={15}
+    />
+  </div>
+  <SongsListContainer
+    filterLevel={15}
+    searchMsg=""
+  />
+</div>
+`;

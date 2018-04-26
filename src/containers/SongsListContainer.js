@@ -11,6 +11,7 @@ export class SongsListContainer extends Component {
     this.state = {
       songsList: [],
       renderSongList: [],
+      //this init page number
       currentPageNumber: 1,
     }
   }
@@ -24,6 +25,19 @@ export class SongsListContainer extends Component {
       })
     })
   }
+
+  componentWillReceiveProps = nextProps => {
+    let { filterLevel, searchMsg } = this.props
+    // check if new search or filter come
+    if (
+      nextProps.searchMsg !== searchMsg ||
+      nextProps.filterLevel !== filterLevel
+    ) {
+      this.onPreparingSongList(nextProps)
+    }
+  }
+
+  //set the page number
   onChangeCurrentPange = pageNumber => {
     this.setState({
       currentPageNumber: pageNumber,
@@ -57,16 +71,6 @@ export class SongsListContainer extends Component {
     )
   }
 
-  componentWillReceiveProps = nextProps => {
-    let { filterLevel, searchMsg } = this.props
-    // check if new search or filter come
-    if (
-      nextProps.searchMsg !== searchMsg ||
-      nextProps.filterLevel !== filterLevel
-    ) {
-      this.onPreparingSongList(nextProps)
-    }
-  }
   // prepare the new list to render
   onPreparingSongList = nextProps => {
     let { songsList } = this.state
@@ -87,6 +91,7 @@ export class SongsListContainer extends Component {
 
   render() {
     let { renderSongList, currentPageNumber } = this.state
+    // if the list is empty then no result found
     if (renderSongList.length < 1) {
       return (
         <div className="empty">

@@ -11,7 +11,7 @@ export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      //indicate if it is search, filter or gener
+      //indicate if it is search or general
       mode: 'general',
       searchMsg: null,
       filterLevel: 15,

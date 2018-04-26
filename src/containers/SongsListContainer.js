@@ -71,7 +71,7 @@ export class SongsListContainer extends Component {
       if (
         song.title.toUpperCase().includes(searchMsg.toUpperCase()) ||
         song.artist.toUpperCase().includes(searchMsg.toUpperCase())
-      )
+      ) {
         return (
           <div key={index}>
             <SingleSongCardCmp
@@ -81,24 +81,36 @@ export class SongsListContainer extends Component {
             <Divider />
           </div>
         )
+      } else {
+        return null
+      }
     })
   }
 
   songsListSwitcher = () => {
     let { mode } = this.props
+    let list = []
     if (mode === 'general') {
-      return this.generalSongList()
+      list = this.generalSongList()
     }
     if (mode === 'search') {
-      return this.searchResultSongList()
+      list = this.searchResultSongList()
     }
+    // check if it is array full of null result
+    if (
+      list.length < 0 ||
+      list.filter(item => item === null).length === list.length
+    ) {
+      return (
+        <div className="empty">
+          <h1> No result found :(</h1>
+        </div>
+      )
+    }
+    return list
   }
 
   render() {
-    if (this.songsListSwitcher().length < 1) {
-      console.log('heher')
-      return <span>No result to show :(</span>
-    }
     return this.songsListSwitcher()
   }
 }

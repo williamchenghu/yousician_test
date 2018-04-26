@@ -37,6 +37,9 @@ body {
   text-align: center;
   top: -2em; }
 
+.empty {
+  text-align: center; }
+
 @media screen and (max-width: 800px) {
   body {
     margin: 0.5em;

@@ -4,7 +4,7 @@ $y-dark-grey: #878789;
 $y-black: #0e0f13;
 
 body {
-  margin: 0;
+  margin: 1em 5em;
   padding: 0;
   font-family: sans-serif;
   background: $y-black;
@@ -19,27 +19,25 @@ body {
 }
 .card {
   display: block;
-  .logo-part {
+  .grid {
     display: inline-block;
-  }
-  .level-part {
-    display: inline-block;
-  }
-  .detail-part {
-    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em;
   }
   .settings {
     float: right;
   }
 }
-
+.padding-space {
+  padding: 1em 2em;
+}
 .donut-level {
   .donut {
     max-width: 3em;
   }
   .number {
     position: relative;
+    text-align: center;
     top: -2em;
-    right: -0.8em;
   }
 }

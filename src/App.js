@@ -11,9 +11,8 @@ export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      //indicate if it is search or general
-      mode: 'general',
-      searchMsg: null,
+      msg: '',
+      searchMsg: '',
       filterLevel: 15,
     }
   }
@@ -23,9 +22,11 @@ export class App extends Component {
     return (
       <div>
         <SearchBar
-          onChange={msg => this.setState({ searchMsg: msg })}
+          onChange={msg => {
+            this.setState({ searchMsg: msg || '' })
+          }}
           onRequestSearch={() => {
-            this.setState({ mode: 'search' })
+            this.setState({ searchMsg: this.state.msg })
           }}
         />
         <div className="silder">
@@ -44,11 +45,7 @@ export class App extends Component {
           />
         </div>
 
-        <SongsListContainer
-          mode={mode}
-          searchMsg={searchMsg}
-          filterLevel={filterLevel}
-        />
+        <SongsListContainer searchMsg={searchMsg} filterLevel={filterLevel} />
       </div>
     )
   }

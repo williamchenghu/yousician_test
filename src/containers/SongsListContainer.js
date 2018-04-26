@@ -9,6 +9,7 @@ export class SongsListContainer extends Component {
     super(props)
     this.state = {
       songsList: [],
+      renderSongList: [],
     }
   }
 
@@ -17,6 +18,7 @@ export class SongsListContainer extends Component {
     axios.get('/songs').then(res => {
       this.setState({
         songsList: res.data,
+        renderSongList: res.data,
       })
     })
   }
@@ -40,14 +42,52 @@ export class SongsListContainer extends Component {
       songsList: newList,
     })
   }
+  //check if the song title or artist matching the search msg
+  songMatchingChecker = (target, searchMsg) => {
+    return (
+      target.title.toUpperCase().includes(searchMsg.toUpperCase()) ||
+      target.artist.toUpperCase().includes(searchMsg.toUpperCase())
+    )
+  }
 
-  generalSongList = () => {
+  componentWillReceiveProps = nextProps => {
+    let { filterLevel, searchMsg } = this.props
+    // check if new search or filter come
+    if (
+      nextProps.searchMsg !== searchMsg ||
+      nextProps.filterLevel !== filterLevel
+    ) {
+      this.onPreparingSongList(nextProps)
+    }
+  }
+  // prepare the new list to render
+  onPreparingSongList = nextProps => {
     let { songsList } = this.state
-    let { filterLevel } = this.props
-    return songsList.map((song, index) => {
-      if (song.level > filterLevel) {
-        return null
+    let { filterLevel, searchMsg } = nextProps
+    let list = songsList.reduce((newList, song) => {
+      if (
+        this.songMatchingChecker(song, searchMsg) &&
+        song.level <= filterLevel
+      ) {
+        newList.push(song)
       }
+      return newList
+    }, [])
+    this.setState({
+      renderSongList: list,
+    })
+  }
+
+  render() {
+    let { renderSongList } = this.state
+    if (renderSongList.length < 1) {
+      return (
+        <div className="empty">
+          <h1>No result found :(</h1>
+        </div>
+      )
+    }
+    return renderSongList.map((song, index) => {
       return (
         <div key={index}>
           <SingleSongCardCmp
@@ -59,64 +99,9 @@ export class SongsListContainer extends Component {
       )
     })
   }
-
-  searchResultSongList = () => {
-    let { songsList } = this.state
-    let { searchMsg, filterLevel } = this.props
-    return songsList.map((song, index) => {
-      if (song.level > filterLevel) {
-        return null
-      }
-      // convert artist and song name to upper case to check
-      if (
-        song.title.toUpperCase().includes(searchMsg.toUpperCase()) ||
-        song.artist.toUpperCase().includes(searchMsg.toUpperCase())
-      ) {
-        return (
-          <div key={index}>
-            <SingleSongCardCmp
-              songDetails={song}
-              onChangeRating={this.onChangeRating}
-            />
-            <Divider />
-          </div>
-        )
-      } else {
-        return null
-      }
-    })
-  }
-
-  songsListSwitcher = () => {
-    let { mode } = this.props
-    let list = []
-    if (mode === 'general') {
-      list = this.generalSongList()
-    }
-    if (mode === 'search') {
-      list = this.searchResultSongList()
-    }
-    // check if it is array full of null result
-    if (
-      list.length < 0 ||
-      list.filter(item => item === null).length === list.length
-    ) {
-      return (
-        <div className="empty">
-          <h1> No result found :(</h1>
-        </div>
-      )
-    }
-    return list
-  }
-
-  render() {
-    return this.songsListSwitcher()
-  }
 }
 
 SongsListContainer.propTypes = {
-  mode: PropTypes.string.isRequired,
   searchMsg: PropTypes.string,
   filterLevel: PropTypes.number,
 }

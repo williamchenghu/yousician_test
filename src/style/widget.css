@@ -13,8 +13,15 @@
   text-align: center; }
 
 .pagination {
-  display: block; }
-  .pagination .grid {
+  display: block;
+  text-align: center;
+  margin: 1em 0em; }
+  .pagination .number {
+    margin: 0em 0.2em;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 1em; }
+    border: 0.1em #dbeaff solid;
+    padding: 0.5em;
+    cursor: pointer; }
+  .pagination .high-light {
+    color: #4fc514; }

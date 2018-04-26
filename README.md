@@ -38,6 +38,7 @@ This project has been covered with unit test and e2e test
 * Library: Reactjs
 * Unit test: Jest, Enzyme
 * Mocking backend: dyson mock server
+* Version Control: git, github
 
 #How to run?
 

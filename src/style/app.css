@@ -25,23 +25,3 @@ body {
 
 .padding-space {
   padding: 1em 2em; }
-
-.silder {
-  margin: 1em 0em; }
-
-.donut-level .donut {
-  max-width: 3em; }
-
-.donut-level .number {
-  position: relative;
-  text-align: center;
-  top: -2em; }
-
-@media screen and (max-width: 800px) {
-  body {
-    margin: 0.5em;
-    /* The width is 100%, when the viewport is 800px or smaller */ }
-  .silder {
-    margin: 1em 1em; }
-  .logo-border {
-    margin-bottom: 1em; } }

@@ -14,7 +14,7 @@ export class SingleSongCardCmp extends Component {
     let { songDetails, onChangeRating } = this.props
     return (
       <div className="card padding-space">
-        <div className="grid">
+        <div className="grid logo-border">
           <img src={logo} alt="Logo" className="logo" />
         </div>
         <div className="grid">

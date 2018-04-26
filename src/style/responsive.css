@@ -3,4 +3,6 @@
     margin: 0.5em;
     /* The width is 100%, when the viewport is 800px or smaller */ }
   .silder {
-    margin: 1em 1em; } }
+    margin: 1em 1em; }
+  .logo-border {
+    margin-bottom: 1em; } }

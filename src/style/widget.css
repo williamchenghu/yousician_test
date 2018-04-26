@@ -1,2 +1,10 @@
 .silder {
   margin: 1em 0em; }
+
+.donut-level .donut {
+  max-width: 3em; }
+
+.donut-level .number {
+  position: relative;
+  text-align: center;
+  top: -2em; }

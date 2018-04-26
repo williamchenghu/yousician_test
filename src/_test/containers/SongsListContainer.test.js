@@ -54,7 +54,7 @@ describe('Container: SongListContainer', () => {
       let instance = wrapper.instance()
 
       //run
-      instance.onChangeCurrentPange(5)
+      instance.onChangeCurrentPage(5)
       //check
       expect(wrapper.state().currentPageNumber).toEqual(5)
     })

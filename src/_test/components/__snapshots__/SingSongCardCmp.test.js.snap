@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Container: SingSongCardCmp activate: SingSongCardCmp should render correctly 1`] = `
+exports[`Cmp: SingSongCardCmp activate: SingSongCardCmp should render correctly 1`] = `
 <div
   className="card padding-space"
 >

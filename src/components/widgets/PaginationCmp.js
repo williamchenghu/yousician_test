@@ -1,11 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const PaginationCmp = ({
-  currentPageNum,
-  listLength,
-  onChangeCurrentPange,
-}) => {
+const PaginationCmp = ({ currentPageNum, listLength, onChangeCurrentPage }) => {
   //show five items in each page
   let totalPageNumber = Math.ceil(listLength / 5)
   let renderList = []
@@ -19,9 +15,10 @@ const PaginationCmp = ({
       {/* if it is not first page show next page button */}
       {currentPageNum !== 1 ? (
         <div
+          id="pre"
           className="number"
           onClick={() => {
-            onChangeCurrentPange(currentPageNum - 1)
+            onChangeCurrentPage(currentPageNum - 1)
           }}
         >
           &lt;
@@ -36,7 +33,7 @@ const PaginationCmp = ({
               currentPageNum === page.pageNumber ? 'high-light' : ''
             }`}
             onClick={() => {
-              onChangeCurrentPange(page.pageNumber)
+              onChangeCurrentPage(page.pageNumber)
             }}
           >
             {page.pageNumber}
@@ -46,9 +43,10 @@ const PaginationCmp = ({
       {/* if it is not last page show pre page button */}
       {currentPageNum !== totalPageNumber ? (
         <div
+          id="next"
           className="number"
           onClick={() => {
-            onChangeCurrentPange(currentPageNum + 1)
+            onChangeCurrentPage(currentPageNum + 1)
           }}
         >
           &gt;
@@ -58,8 +56,9 @@ const PaginationCmp = ({
   )
 }
 PaginationCmp.propTypes = {
-  onChangeCurrentPange: PropTypes.func.isRequired,
+  onChangeCurrentPage: PropTypes.func.isRequired,
   listLength: PropTypes.number.isRequired,
+  currentPageNum: PropTypes.number.isRequired,
 }
 
 export default PaginationCmp

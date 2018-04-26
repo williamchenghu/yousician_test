@@ -1,7 +1,7 @@
 import React from 'react'
 import LevelChartCmp from '../../../components/widgets/LevelChartCmp'
 
-describe('Container: LevelChartCmp', () => {
+describe('Cmp: LevelChartCmp', () => {
   const props = {
     level: 5,
   }

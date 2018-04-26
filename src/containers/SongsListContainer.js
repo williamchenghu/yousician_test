@@ -38,7 +38,7 @@ export class SongsListContainer extends Component {
   }
 
   //set the page number
-  onChangeCurrentPange = pageNumber => {
+  onChangeCurrentPage = pageNumber => {
     this.setState({
       currentPageNumber: pageNumber,
     })
@@ -121,7 +121,7 @@ export class SongsListContainer extends Component {
         <PaginationCmp
           currentPageNum={currentPageNumber}
           listLength={renderSongList.length}
-          onChangeCurrentPange={this.onChangeCurrentPange}
+          onChangeCurrentPage={this.onChangeCurrentPage}
         />
       </div>
     )

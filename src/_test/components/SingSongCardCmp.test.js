@@ -2,7 +2,7 @@ import React from 'react'
 import { songList } from '../_mocks_/songList'
 import SingSongCardCmp from '../../components/SingleSongCardCmp'
 
-describe('Container: SingSongCardCmp', () => {
+describe('Cmp: SingSongCardCmp', () => {
   const props = {
     onChangeRating: jest.fn(),
     songDetails: songList[0],

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cmp: PaginationCmp activate: PaginationCmp should render correctly 1`] = `
+<div
+  className="pagination"
+>
+  <div
+    className="number"
+    id="pre"
+    onClick={[Function]}
+  >
+    &lt;
+  </div>
+  <div
+    className="number "
+    key="0"
+    onClick={[Function]}
+  >
+    1
+  </div>
+  <div
+    className="number "
+    key="1"
+    onClick={[Function]}
+  >
+    2
+  </div>
+  <div
+    className="number"
+    id="next"
+    onClick={[Function]}
+  >
+    &gt;
+  </div>
+</div>
+`;

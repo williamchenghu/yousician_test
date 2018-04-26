@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Container: LevelChartCmp activate: LevelChartCmp should render correctly 1`] = `
+exports[`Cmp: LevelChartCmp activate: LevelChartCmp should render correctly 1`] = `
 <div
   className="donut-level"
 >

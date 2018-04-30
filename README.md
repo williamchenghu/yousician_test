@@ -1,4 +1,4 @@
-##About project
+## About project
 A list of songs get from mock server through REST API with following features:
 
 * song list
@@ -9,7 +9,7 @@ A list of songs get from mock server through REST API with following features:
 
 This project has been covered with unit test and e2e test
 
-##File structure
+## File structure
 
 ```
 src/
@@ -36,7 +36,7 @@ src/
 
 ```
 
-##Lauguage and library
+## Lauguage and library
 
 * Lanuage: Javascript
 * Library: Reactjs
@@ -44,12 +44,12 @@ src/
 * Mocking backend: dyson mock server
 * Version Control: git, github
 
-##How to run?
+## How to run?
 
 * go to project folder in terminal and run `npm install`
 * run project with comment `npm start`
 * open the browser `localhost:3000` check the web page
 
-##How to run the unit test?
+## How to run the unit test?
 
 * go to project folder in terminal and run `npm run test`

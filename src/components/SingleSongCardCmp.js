@@ -15,6 +15,7 @@ export const SingleSongCardCmp = ({ songDetails, onChangeRating }) => {
       </div>
       <div className="grid">
         <div>{songDetails.title}</div>
+        <div>{songDetails.released}</div>
         <div className="card">
           <div className="grid">
             <Rating

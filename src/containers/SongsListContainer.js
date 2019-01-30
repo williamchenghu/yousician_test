@@ -96,8 +96,8 @@ export class SongsListContainer extends Component {
       <div>
         {renderSongList.map((song, index) => {
           if (
-            (currentPageNumber - 1) * 5 <= index &&
-            index < currentPageNumber * 5
+            (currentPageNumber - 1) * 4 <= index &&
+            index < currentPageNumber * 4
           ) {
             return (
               <div key={index}>

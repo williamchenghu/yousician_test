@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const PaginationCmp = ({ currentPageNum, listLength, onChangeCurrentPage }) => {
   //show five items in each page
-  let totalPageNumber = Math.ceil(listLength / 5)
+  let totalPageNumber = Math.ceil(listLength / 4)
   let renderList = []
   for (let i = 1; i <= totalPageNumber; i++) {
     renderList.push({
